@@ -1,0 +1,1114 @@
+/* =========================================
+   LEPAKSHI TOURISM WEBSITE
+   Main stylesheet
+   HTML5 + CSS3
+========================================= */
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #302821;
+    background: #f7f2e8;
+    line-height: 1.7;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1180px, 90%);
+    margin: auto;
+}
+
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+    --cream: #f7f2e8;
+    --paper: #fffdf8;
+    --brown: #57382b;
+    --dark: #28211c;
+    --terracotta: #a75536;
+    --gold: #c69b52;
+    --light-brown: #eadbc5;
+    --shadow: 0 18px 45px rgba(50, 35, 25, 0.12);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    background: rgba(255, 253, 248, 0.97);
+    border-bottom: 1px solid #e7dac8;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--brown);
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navbar a {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    color: #59483c;
+    padding: 10px 0;
+    position: relative;
+}
+
+.navbar a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: var(--terracotta);
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    transition: 0.3s;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 88vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(30, 20, 14, 0.82),
+            rgba(30, 20, 14, 0.42),
+            rgba(30, 20, 14, 0.18)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 800px;
+}
+
+.eyebrow {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: var(--gold);
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(70px, 12vw, 150px);
+    line-height: 0.8;
+    letter-spacing: 8px;
+    margin-bottom: 25px;
+}
+
+.hero h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(30px, 4vw, 52px);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 650px;
+    font-size: 17px;
+    margin-bottom: 35px;
+    color: #f8eee1;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.btn {
+    display: inline-block;
+    padding: 14px 27px;
+    background: var(--terracotta);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    border: 1px solid var(--terracotta);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--terracotta);
+}
+
+.dark-btn {
+    background: var(--brown);
+    border-color: var(--brown);
+}
+
+.dark-btn:hover {
+    color: var(--brown);
+}
+
+
+/* =========================================
+   PAGE HERO
+========================================= */
+
+.page-hero {
+    height: 430px;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero > img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.page-hero-content {
+    position: absolute;
+    left: 5%;
+    bottom: 70px;
+    z-index: 2;
+    color: white;
+}
+
+.page-hero-content span {
+    letter-spacing: 4px;
+    font-size: 12px;
+    color: #e4c88f;
+}
+
+.page-hero-content h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(50px, 7vw, 90px);
+    line-height: 1;
+    margin: 12px 0;
+}
+
+.page-hero-content p {
+    font-size: 16px;
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.section {
+    padding: 100px 0;
+}
+
+.light-section {
+    background: #eee4d4;
+}
+
+.section-heading {
+    max-width: 760px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-heading > span {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: var(--terracotta);
+    font-weight: 600;
+}
+
+.section-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(40px, 5vw, 64px);
+    color: var(--brown);
+    line-height: 1.05;
+    margin: 12px 0 18px;
+}
+
+.section-heading p {
+    color: #746459;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.cards {
+    display: grid;
+    gap: 25px;
+}
+
+.cards.four {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+    background: var(--paper);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card > img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-number {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 29px;
+    margin: 5px 0 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #746459;
+    margin-bottom: 15px;
+}
+
+.card a {
+    color: var(--terracotta);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   SPLIT SECTION
+========================================= */
+
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #eadfce;
+}
+
+.split-image {
+    min-height: 600px;
+}
+
+.split-image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.split-content {
+    padding: 90px 9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.split-content h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(42px, 5vw, 65px);
+    color: var(--brown);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.split-content p {
+    margin-bottom: 20px;
+    color: #69594e;
+}
+
+.split-content .btn {
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   QUOTE
+========================================= */
+
+.quote-section {
+    background: var(--brown);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.quote {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(34px, 5vw, 62px);
+    line-height: 1.1;
+    max-width: 850px;
+    margin: auto;
+}
+
+.quote-author {
+    margin-top: 25px;
+    color: #d9bd84;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.cta {
+    background:
+        linear-gradient(
+            rgba(70, 40, 28, 0.92),
+            rgba(70, 40, 28, 0.92)
+        );
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.cta h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(45px, 6vw, 75px);
+    line-height: 1;
+    margin: 15px 0;
+}
+
+.cta p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: #e8d9ca;
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.timeline {
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 28px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #d5b984;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 25px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.timeline-number {
+    width: 58px;
+    height: 58px;
+    background: var(--terracotta);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.timeline-content {
+    background: white;
+    padding: 30px;
+    box-shadow: 0 12px 35px rgba(50, 35, 25, 0.08);
+}
+
+.timeline-content h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    color: var(--brown);
+    margin-bottom: 8px;
+}
+
+
+/* =========================================
+   TWO COLUMN
+========================================= */
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.large-image {
+    height: 600px;
+    object-fit: cover;
+    box-shadow: var(--shadow);
+}
+
+.content-box h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 58px;
+    line-height: 1.05;
+    color: var(--brown);
+    margin: 15px 0 25px;
+}
+
+.content-box p {
+    color: #6c5d52;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   FEATURE CARDS
+========================================= */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.feature-card {
+    background: white;
+    padding: 35px 28px;
+    border-bottom: 4px solid var(--gold);
+    box-shadow: 0 10px 30px rgba(50, 35, 25, 0.07);
+}
+
+.feature-icon {
+    font-size: 12px;
+    color: var(--terracotta);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    color: var(--brown);
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #75665a;
+}
+
+
+/* =========================================
+   MINI GALLERY
+========================================= */
+
+.mini-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.mini-gallery figure {
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.mini-gallery img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.mini-gallery figcaption {
+    padding: 18px;
+    font-weight: 600;
+    color: var(--brown);
+}
+
+
+/* =========================================
+   ART GRID
+========================================= */
+
+.art-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.art-card {
+    background: white;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.art-card:hover {
+    transform: translateY(-8px);
+}
+
+.art-card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.art-content {
+    padding: 25px;
+}
+
+.art-content h3 {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--brown);
+    font-size: 31px;
+    margin-bottom: 10px;
+}
+
+.art-content p {
+    font-size: 14px;
+    color: #746459;
+}
+
+
+/* =========================================
+   ATTRACTIONS
+========================================= */
+
+.attraction-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.attraction-card {
+    background: white;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.attraction-card:hover {
+    transform: translateY(-8px);
+}
+
+.attraction-card img {
+    height: 240px;
+    object-fit: cover;
+}
+
+.attraction-body {
+    padding: 25px;
+}
+
+.attraction-body > span {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.attraction-body h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    color: var(--brown);
+    margin: 5px 0 10px;
+}
+
+.attraction-body p {
+    color: #75665a;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   TRAVEL
+========================================= */
+
+.travel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.travel-card {
+    background: white;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.travel-icon {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.travel-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--brown);
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.travel-card p {
+    color: #746459;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   DAY PLAN
+========================================= */
+
+.day-plan {
+    max-width: 850px;
+    margin: auto;
+    display: grid;
+    gap: 18px;
+}
+
+.day-plan > div {
+    background: white;
+    padding: 25px 30px;
+    border-left: 5px solid var(--terracotta);
+}
+
+.day-plan strong {
+    color: var(--brown);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 26px;
+}
+
+.day-plan p {
+    margin-top: 5px;
+    color: #75665a;
+}
+
+
+/* =========================================
+   TIPS
+========================================= */
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.tip {
+    background: white;
+    padding: 25px;
+    display: flex;
+    gap: 18px;
+    box-shadow: 0 8px 25px rgba(50, 35, 25, 0.06);
+}
+
+.tip span {
+    color: var(--terracotta);
+    font-weight: 700;
+}
+
+.tip p {
+    color: #6f6055;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   FAQ
+========================================= */
+
+.faq-section {
+    background: #eee4d4;
+    padding: 100px 0;
+}
+
+.faq {
+    max-width: 850px;
+    margin: auto;
+}
+
+details {
+    background: white;
+    margin-bottom: 12px;
+    padding: 20px 25px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--brown);
+}
+
+details p {
+    margin-top: 15px;
+    color: #75665a;
+}
+
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    background: white;
+    min-height: 280px;
+}
+
+.gallery-item.large {
+    grid-column: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+.gallery-item figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 18px;
+    color: white;
+    font-weight: 600;
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.75)
+    );
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    background: #241c17;
+    color: white;
+    padding-top: 70px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+}
+
+.footer h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 38px;
+    letter-spacing: 3px;
+}
+
+.footer h4 {
+    color: #d9bd84;
+    margin-bottom: 18px;
+}
+
+.footer p {
+    color: #b9aaa0;
+    font-size: 14px;
+    max-width: 400px;
+}
+
+.footer a {
+    display: block;
+    color: #c8bbb1;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-bottom p {
+    max-width: none;
+    margin: auto;
+    font-size: 12px;
+}
+
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .nav-container {
+        flex-direction: column;
+        padding: 18px 0;
+    }
+
+    .navbar {
+        gap: 14px;
+    }
+
+    .cards.four,
+    .feature-grid,
+    .attraction-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .art-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .split-section {
+        grid-template-columns: 1fr;
+    }
+
+    .split-image {
+        min-height: 450px;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+
+    .large-image {
+        height: 450px;
+    }
+
+    .travel-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .nav-container {
+        min-height: auto;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .navbar {
+        gap: 8px 15px;
+    }
+
+    .navbar a {
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 700px;
+    }
+
+    .hero-content {
+        padding-top: 100px;
+    }
+
+    .hero h1 {
+        font-size: 72px;
+        letter-spacing: 4px;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .page-hero {
+        height: 350px;
+    }
+
+    .page-hero-content {
+        bottom: 45px;
+    }
+
+    .page-hero-content h1 {
+        font-size: 52px;
+    }
+
+    .cards.four,
+    .feature-grid,
+    .art-grid,
+    .attraction-grid,
+    .travel-grid,
+    .tips-grid,
+    .mini-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .split-image {
+        min-height: 350px;
+    }
+
+    .split-content {
+        padding: 65px 8%;
+    }
+
+    .content-box h2 {
+        font-size: 45px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 45px 1fr;
+        gap: 15px;
+    }
+
+    .timeline::before {
+        left: 21px;
+    }
+
+    .timeline-number {
+        width: 44px;
+        height: 44px;
+        font-size: 11px;
+    }
+
+    .timeline-content {
+        padding: 22px;
+    }
+
+    .timeline-content h3 {
+        font-size: 27px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item.large {
+        grid-column: span 1;
+    }
+
+    .gallery-item,
+    .gallery-item img {
+        min-height: 300px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+}
